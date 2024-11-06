@@ -1,0 +1,37 @@
+{
+	"manifest_version": 3,
+	"name": "Automatizador DARE SP (TJSP) - updated",
+	"version": "2.0",
+	"permissions": [
+		"scripting",
+		"activeTab",
+		"storage",
+		"tabs"
+	],
+	"action": {
+		"default_title": "Click to view a popup",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://esaj.tjsp.jus.br/cpopg/open.do"],
+			"js": ["preencher-processo.js"]
+		},
+		{
+			"matches": ["https://esaj.tjsp.jus.br/cpopg/search.do?*"],
+			"js": ["preencher-processo-apos-erro.js"]
+		},
+		{
+			"matches": ["https://esaj.tjsp.jus.br/cpopg/show.do?processo.codigo=*"],
+			"js": ["obter-valor-custas.js"]
+		},
+		{
+			"matches": ["https://portaldecustas.tjsp.jus.br/portaltjsp/pages/custas/new"],
+			"js": ["emitir-dare-updated.js", "goToPrintingPage.js"]
+		},
+		{
+			"matches": ["https://portaldecustas.tjsp.jus.br/portaltjsp/pages/custas/save/"],
+			"js": ["imprimir-dare.js"]
+		}
+	]
+}

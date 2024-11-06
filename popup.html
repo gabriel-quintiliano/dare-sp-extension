@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<script src="popup.js" defer></script>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<!-- <link rel="stylesheet" href="bootstrap-grid.min.css"> -->
+	</head>
+
+	<body style="width: 300px;">
+		<p>status atual: <span id="status"></span></p>
+		<button type="button" id="activateBtn">Ativar</button>
+		<button type="button" id="deactivateBtn">Desativar</button>
+		<button type="button" id="clearBtn">Limpar storage</button>
+		<br>
+		<br>
+		<div class="container mb-3">
+			<div class="row">
+				<div class="col mb-2">
+					<h3>cpf ou cnpj:</h3>
+					<!-- 000.000.000-00 -->
+					<div class="input-group">
+						<input type="text" id="taxpayerDoc" class="form-control">
+					</div>
+					<br>
+					<br>
+					<h3>Processos:</h3>
+					<!-- 1234567-00.2019.8.26.0038 -->
+					<div id="procWrapper">
+						<!-- <input type="text" id="defProc" class="procId form-control mb-2"> -->
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="d-flex">
+						<button id="addProc" type="button" class="btn btn-primary me-2" style="width: 70%">ADD novo</button>
+						<button id="removeProc" type="button" class="btn btn-danger" style="width: 100%">REMOVER último</button>
+					</div>
+					<button id="emitirDaresBtn" type="button" class="btn btn-success mt-2" style="height: 50px; width: 100%">EMITIR DAREs</button>
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col">
+					<div id="warning" class="hide">
+						<hr>
+						<div class="alert alert-danger" role="alert">
+							!!! Algo não está certo! Verifique !!!
+							<div id="warning-proc-reference" class="hide">
+								<br>
+								<p class="mb-0">Processo incorreto: <br><span id="processo-incorreto"></span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

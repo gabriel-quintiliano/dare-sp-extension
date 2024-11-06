@@ -119,7 +119,7 @@ async function preencherValorCausa(valorCausa) {
 		valorCausaInput.value = valorCausa;
 
 		if (Number(valorCausa.replace(',','.').replace('.','')) < 17300) {
-			valorReceitaInput.value = '171,30';
+			valorReceitaInput.value = '176,80';
 		}
 
 		// click no botão 'adicionar' (o processo)
